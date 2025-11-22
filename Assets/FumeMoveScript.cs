@@ -4,22 +4,22 @@ using UnityEngine;
 
 public class FumeMoveScript : MonoBehaviour
 {
-
     public float moveSpeed = 10;
-    // Start is called before the first frame update
-    void Start()
-    {
 
-    }
-
-    // Update is called once per frame
     void Update()
     {
         moveFume();
     }
 
-    void moveFume() {
-        transform.position = transform.position + (Vector3.left * moveSpeed) * Time.deltaTime;
+    void moveFume()
+    {
+        
+        float mult = 1f;
+        if (WeatherManager.Instance != null)
+            mult = WeatherManager.Instance.worldSpeedMultiplier;
+
+        // move faster/slower depending on weather
+        transform.position += Vector3.left * moveSpeed * mult * Time.deltaTime;
 
         if (transform.position.x < -32)
         {

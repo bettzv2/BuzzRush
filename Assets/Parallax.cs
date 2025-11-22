@@ -16,7 +16,14 @@ public class Parallax : MonoBehaviour
 
     private void Update()
     {
-        
+        // get global weather speed multiplier
+        float mult = 1f;
+        if (WeatherManager.Instance != null)
+            mult = WeatherManager.Instance.worldSpeedMultiplier;
+
+        // move texture using the multiplier
+        offset.x += animationSpeed * mult * Time.deltaTime;
+
+        meshRenderer.material.mainTextureOffset = offset;
     }
 }
-
