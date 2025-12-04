@@ -1,2 +1,1 @@
-# BuzzRush-main
-
+# BuzzRush
