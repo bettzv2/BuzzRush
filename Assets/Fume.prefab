@@ -85,7 +85,7 @@ GameObject:
   - component: {fileID: 6136407648468339187}
   m_Layer: 0
   m_Name: Top Pipe
-  m_TagString: Untagged
+  m_TagString: Fume
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -244,7 +244,7 @@ GameObject:
   - component: {fileID: 6183081946541338100}
   m_Layer: 0
   m_Name: Bot Pipe
-  m_TagString: Untagged
+  m_TagString: Fume
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
