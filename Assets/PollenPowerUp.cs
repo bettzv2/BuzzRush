@@ -9,6 +9,14 @@ public class PollenPowerUp : MonoBehaviour
         {
             bee.hasPollen = true;                // activate powerup
             bee.pollenTimer = bee.pollenDuration; // start countdown
+
+            // tell the spawner that this flower was collected
+            FlowerSpawner spawner = FindObjectOfType<FlowerSpawner>();
+            if (spawner != null)
+            {
+                spawner.OnFlowerCollected();
+            }
+
             Destroy(gameObject);                  // remove flower
         }
     }
