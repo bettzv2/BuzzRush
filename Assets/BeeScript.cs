@@ -39,19 +39,14 @@ public class BeeScript : MonoBehaviour
         if (!beeIsAlive) return;
 
         // Vertical control 
-        if (Input.GetKeyDown(KeyCode.W)) {
-            // flap-like burst upward (keep current x velocity)
-            rbody.velocity = new Vector2(rbody.velocity.x, flapStrength);
-        }
-
         // gentle hover while holding W
         if (Input.GetKey(KeyCode.W)) {
-            rbody.AddForce(Vector2.up * holdThrust, ForceMode2D.Force);
+            rbody.velocity = new Vector2(rbody.velocity.x, flapStrength);
         }
 
         // dive while holding S
         if (Input.GetKey(KeyCode.S)) {
-            rbody.AddForce(Vector2.down * diveForce, ForceMode2D.Force);
+            rbody.velocity = new Vector2(rbody.velocity.x, -diveForce);
         }
 
         // Cap vertical speed
@@ -59,6 +54,19 @@ public class BeeScript : MonoBehaviour
             rbody.velocity.x,
             Mathf.Clamp(rbody.velocity.y, -maxYSpeed, maxYSpeed)
         );
+        // Horizontal drift with A/D, affected by weather + wind 
+        int h = 0;
+        if (Input.GetKey(KeyCode.A)) h -= 1;
+        if (Input.GetKey(KeyCode.D)) h += 1;
+
+        float speed = horizSpeed * speedMultiplier;
+        Vector2 v = rbody.velocity;
+
+        float inputX = h * speed;
+        float windX = windForce;
+
+        v.x = inputX + windX;
+        rbody.velocity = v;
 
         //Pollen Burst timer and glow
         if (hasPollen)
@@ -76,20 +84,6 @@ public class BeeScript : MonoBehaviour
             if (sr != null)
                 sr.color = Color.white;    // normal color
         }
-
-        // Horizontal drift with A/D, affected by weather + wind 
-int h = 0;
-if (Input.GetKey(KeyCode.A)) h -= 1;
-if (Input.GetKey(KeyCode.D)) h += 1;
-
-        float speed = horizSpeed * speedMultiplier;
-        Vector2 v = rbody.velocity;
-
-        float inputX = h * speed;
-        float windX = windForce;
-
-        v.x = inputX + windX;
-        rbody.velocity = v;
     }
 
     void OnBecameInvisible()
