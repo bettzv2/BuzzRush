@@ -3,9 +3,13 @@ BuzzRush is an arcade endless runner game where players guide a bee through skie
 
 # Contributors:
 Carolinne Marquez: Sound
+
 Isabel Salazar: Lead Developer
+
 Joseph Medina: UI/Main Menu
+
 Dumara Herrera Mendoza: Junior Developer
+
 Ivette Adame-Castro: Art/Sprites
 
 # Unity 2D - (Version Number)
