@@ -1,5 +1,5 @@
 # BuzzRush
-BuzzRush is an arcade endless runner game where players guide a bee through skies filled with obstacles and challenges. The game is fun, fast paced, and offers an addictive experience.
+Buzzrush takes place in a vibrant, green ecosystem that is slowly being destroyed by toxic industrial gases. The world will consist of vibrant flowers and grass that are slowly being poisoned by these toxic fumes. BuzzRush is an arcade endless runner game where players guide a bee through skies filled with obstacles and challenges.
 
 # Contributors:
 Carolinne Marquez: Sound
