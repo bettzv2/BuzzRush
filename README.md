@@ -12,4 +12,4 @@ Dumara Herrera Mendoza: Junior Developer
 
 Ivette Adame-Castro: Art/Sprites
 
-# Unity 2D - (Version Number)
+# Unity 2D - (2021.2.7f1)
